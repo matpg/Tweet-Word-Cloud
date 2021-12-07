@@ -29,9 +29,9 @@ def get_word_cloud(image, data, max_words, max_font_size):
     return wordcloud
 
 
-st.title("2020 Word Clouds based on Google Keyword and Twitter Hashtag trends")
-image = st.sidebar.selectbox(label='Select Image Mask', options=[
-                             'default', 'twitter', 'hashtag', 'heart'])
+st.title("Tweet Word Cloud para Tweet Analyzer")
+image = st.sidebar.selectbox(label='Selecciona Máscara de Imagen', options=[
+                             'default', 'twitter', 'hashtag', 'heart', 'arroba'])
 combined_keyword, weekly_keywords, dates = load_data()
 
 st.header("Entire Year")
@@ -42,7 +42,7 @@ plt.axis("off")
 st.pyplot(fig1)
 
 st.header("Weekly")
-date = st.selectbox(label='Select Date', options=dates)
+date = st.selectbox(label='Selecciona Fecha', options=dates)
 keywords = weekly_keywords[date]
 wordcloud = get_word_cloud(image, keywords, 200, 25)
 fig2 = plt.figure()
