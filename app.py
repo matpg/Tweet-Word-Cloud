@@ -7,9 +7,9 @@ import numpy as np
 
 
 def load_data():
-    with open('Word_Clouds\data\weekly.json', 'r') as file:
+    with open('data/weekly.json', 'r') as file:
         weekly_keywords = json.load(file)
-    with open('Word_Clouds\data\combined.json') as file:
+    with open('data/combined.json') as file:
         combined_keyword = json.load(file)
     dates = [date for date in weekly_keywords]
     return combined_keyword, weekly_keywords, dates
